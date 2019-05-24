@@ -1,497 +1,471 @@
 <!DOCTYPE html>
 <html>
 <title> H&M Bulgaria </title>
-    <head>
-      <link rel="stylesheet" type = "text/css" href="./main.css">
-       <link rel="stylesheet" type="text/css" href="./themify-icons/themify-icons.css">
-       <script type = "text/javascript" src= "./javascript.js"></script>
-    </head>
 
-    <body>
+<head>
+  <link rel="stylesheet" type="text/css" href="./main.css">
+  <link rel="stylesheet" type="text/css" href="./themify-icons/themify-icons.css">
+  <script type="text/javascript" src="./javascript.js"></script>
+</head>
 
-      <!-- Top Strip -->
+<body>
 
-        <div class = "top-strip">
+  <!-- Top Strip -->
 
-          <div class = "services-menu-left">
-            <ul>
-              <li>Обслужване на клиенти</li>
-              <li>Бюлетин</li>
-            </ul>
-          </div>
+  <div class="top-strip">
 
-          <div class = "dropdown-icon">
-            <a href = "javascript:void(0);" onclick = "dropdownMenu()"> &#9776;
-            </a>
-            <ul class = "more-dropmenu" id = "dropdownClick" style = "display: none;">
-              <li class = "dropmenu-responsive">Обслужване на клиенти</li>
-              <li class = "dropmenu-responsive">Бюлетин</li>
-              <li> Намери магазин </li>
-              <li> Изтегли Android </li>
-              <li> Изтегли iOS </li>
-              <a href = "javascript: void(0);" onclick="highContrast()">
-              <li id = "highContrastLink">Активирай режим на висок контраст
-              </li>
-              </a>
-            </ul>
-          </div>
-
-          <div class = "services-menu-right">
-            <ul>
-              <li>Моят H&M</li>
-              <li class = "sign-in-tab" id = "SigninTab">
-                <a href = "#"  onclick = "showSigninMenu()">
-                Вход/Създаване на профил
-                </a>
-                <div class = "sign-in-menu" id = "SigninMenu" style= "display: none;">
-                  <div class = "sign-in-container">
-                    <div class = "sign-in-login">
-                      <form id = "theLoginForm" class = "sign-in-form" onsubmit = "trackSubmitLogin()">
-                        <fieldset class = "fieldset">
-                          <legend class = "legend sub-sub-heading light">
-                            Вход
-                          </legend>
-                          <div class = "inputwrapper required">
-                            <label class = "label">
-                              *Имейл:
-                            </label>
-                            <input required class = "text-input" id = "signin-rollover-email" maxlength="50" autocomplete="email" data-validation-email = "true" data-validation-email-text = "Моля въведете валиден имейл адрес" data-validated-value ="jane.doe@email.com" data-validation-inline ="false">
-                            <div class="input-info">
-                              Моля, въведете имейл адрес.
-                            </div>
-                          </div>
-                          <div class = "inputwrapper required">
-                            <label class = "label">
-                              *Парола:
-                            </label>
-                            <input required class = "password-input" type = "password" id = "signinPassword" passwordVisible = "false" maxlength = "25" data-validation-required-text = "Трябва да въведете парола"  data-validation-nospaces = "true" data-validation-nospaces-text = "Не се допускат интервали в паролата" data-validation-minlength = "6" data-validation-minlegth-text = "Паролата трябва да бъде най-малко шест знака" data-validation-maxlength-text = "Паролата не може да надвишава 25 знака">
-                            <button type="button" onclick = "togglePasswordVisibility()" class = "toggle-password-visibility" id = "passwordVisibilityButton">ПОКАЖИ</button>
-                          </div>
-                          <div class = "inputwrapper optional">
-                          <input class = "checkbox-input" type = "checkbox" id ="signin-rollover-remember-me">
-                          <label class="checkbox-label" for="signin-rollover-remember-me">Запомни ме!
-                          </label>
-                          </div>
-                      </fieldset>
-                    <div class = "inputwrapper">
-                      <p>
-                        <a href="#requestSignIn" class="forgot-password underline">Забравена парола</a>
-                      </p>
-                      <input id="loginBtnSubmit" type="submit" class="submit-button" value="Вход" data-validation-text="Този формуляр не може да бъде изпратен. Моля, коригирайте информацията." data-validation-required="true">
-                    </div>
-                    <hr>
-                    <div class ="inputwrapper join">
-                      <input type="button" class="create-profile-button" value="Създаване на профил">
-                    </div>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </li>
-
-              <li>&#9829; <b>Любими</b></li>
-              <li>
-               <span class = "ti-bag"></span>
-                <div
-               onmouseover="dropdownBag()"
-               onmouseout="delay()">
-                 <b>Кошница (0)</b>
-                </div>
-
-               <div class = "shopping-bag-menu" id ="shoppingBag">
-                 <div class = "bag-menu-container">
-                  <div class = "shopping-bag-status">
-                  Кошницата ви е празна!
-                  </div>
-                  <div class = "shopping-bag-order">
-                  Поръчката ви:
-                  </div>
-                  <div class = "order-value">
-                   0,00лв.
-                  </div>
-                 <hr>
-                 <div class = "total">
-                   Всичко:
-                 </div>
-                 <div class = "total-value">
-                   0,00лв.
-                 </div>
-                </div>
-               </div>
-
-              </li>
-            </ul>
-          </div>
-        </div>
-
-      <!-- Logo -->
-    <div class = "logo">
-    	<a href ="#"><img src = "./H&M Logo.png"> </a>
+    <div class="services-menu-left">
+      <ul>
+        <li>Обслужване на клиенти</li>
+        <li>Бюлетин</li>
+      </ul>
     </div>
 
-    <!-- Nav Bar -->
-    <nav class = "primary-menu">
-      <ul>
-        <li><a href ="#" onclick="aloo()">Жени </a></li>
-        <li><a href ="#">Мъже</a></li>
-        <li><a href ="#">Divided</a></li>
-        <li><a href ="#">Деца</a></li>
-        <li><a href ="#">H&M Home</a></li>
-        <li><a href ="#">Намаление</a></li>
-        <li><a href ="#">#HMXME</a></li>
+    <div class="dropdown-icon">
+      <a href="javascript:void(0);" onclick="dropdownMenu()"> &#9776;
+      </a>
+      <ul class="more-dropmenu" id="dropdownClick" style="display: none;">
+        <li class="dropmenu-responsive">Обслужване на клиенти</li>
+        <li class="dropmenu-responsive">Бюлетин</li>
+        <li> Намери магазин </li>
+        <li> Изтегли Android </li>
+        <li> Изтегли iOS </li>
+        <a href="javascript: void(0);" onclick="highContrast()">
+          <li id="highContrastLink">Активирай режим на висок контраст
+          </li>
+        </a>
       </ul>
-    </nav>
+    </div>
 
-    <!-- Main -->
-    <div class = "horizontal-line">
+    <div class="services-menu-right">
+      <ul>
+        <li>Моят H&M</li>
+        <li class="sign-in-tab" id="SigninTab">
+          <a href="#" onclick="showSigninMenu()">
+            Вход/Създаване на профил
+          </a>
+          <div class="sign-in-menu" id="SigninMenu" style="display: none;">
+            <div class="sign-in-container">
+              <div class="sign-in-login">
+                <form id="theLoginForm" class="sign-in-form" onsubmit="trackSubmitLogin()">
+                  <fieldset class="fieldset">
+                    <legend class="legend sub-sub-heading light">
+                      Вход
+                    </legend>
+                    <div class="inputwrapper required">
+                      <label class="label">
+                        *Имейл:
+                      </label>
+                      <input required class="text-input" id="signin-rollover-email" maxlength="50" autocomplete="email" data-validation-email="true" data-validation-email-text="Моля въведете валиден имейл адрес" data-validated-value="jane.doe@email.com"
+                        data-validation-inline="false">
+                      <div class="input-info">
+                        Моля, въведете имейл адрес.
+                      </div>
+                    </div>
+                    <div class="inputwrapper required">
+                      <label class="label">
+                        *Парола:
+                      </label>
+                      <input required class="password-input" type="password" id="signinPassword" passwordVisible="false" maxlength="25" data-validation-required-text="Трябва да въведете парола" data-validation-nospaces="true"
+                        data-validation-nospaces-text="Не се допускат интервали в паролата" data-validation-minlength="6" data-validation-minlegth-text="Паролата трябва да бъде най-малко шест знака" data-validation-maxlength-text="Паролата не може да надвишава 25 знака">
+                      <button type="button" onclick="togglePasswordVisibility()" class="toggle-password-visibility" id="passwordVisibilityButton">ПОКАЖИ</button>
+                    </div>
+                    <div class="inputwrapper optional">
+                      <input class="checkbox-input" type="checkbox" id="signin-rollover-remember-me">
+                      <label class="checkbox-label" for="signin-rollover-remember-me">Запомни ме!
+                      </label>
+                    </div>
+                  </fieldset>
+                  <div class="inputwrapper">
+                    <p>
+                      <a href="#requestSignIn" class="forgot-password underline">Забравена парола</a>
+                    </p>
+                    <input id="loginBtnSubmit" type="submit" class="submit-button" value="Вход" data-validation-text="Този формуляр не може да бъде изпратен. Моля, коригирайте информацията." data-validation-required="true">
+                  </div>
+                  <hr>
+                  <div class="inputwrapper join">
+                    <input type="button" class="create-profile-button" value="Създаване на профил">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li>&#9829; <b>Любими</b></li>
+        <li>
+          <span class="ti-bag"></span>
+          <div onmouseover="dropdownBag()" onmouseout="delay()">
+            <b>Кошница (0)</b>
+          </div>
+
+          <div class="shopping-bag-menu" id="shoppingBag">
+            <div class="bag-menu-container">
+              <div class="shopping-bag-status">
+                Кошницата ви е празна!
+              </div>
+              <div class="shopping-bag-order">
+                Поръчката ви:
+              </div>
+              <div class="order-value">
+                0,00лв.
+              </div>
+              <hr>
+              <div class="total">
+                Всичко:
+              </div>
+              <div class="total-value">
+                0,00лв.
+              </div>
+            </div>
+          </div>
+
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Logo -->
+  <div class="logo">
+    <a href="#"><img src="./H&M Logo.png"> </a>
+  </div>
+
+  <!-- Nav Bar -->
+  <nav class="primary-menu">
+    <ul>
+      <li><a href="#" onclick="aloo()">Жени </a></li>
+      <li><a href="#">Мъже</a></li>
+      <li><a href="#">Divided</a></li>
+      <li><a href="#">Деца</a></li>
+      <li><a href="#">H&M Home</a></li>
+      <li><a href="#">Намаление</a></li>
+      <li><a href="#">#HMXME</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main -->
+  <div class="horizontal-line">
     <hr>
   </div>
-<div class = "layout" id = "layout">
-    <section class = "segment">
-    <div class = "responsive usp-message">
-       <div class = "message-item">
-          <div class = "message">
-          <span class="ti-gift"></span>
-           Безплатна доставка и безплатно връщане
-          </div>
-       </div>
-        <div class = "message-item">
-          <div class = "message">
-          <span class = "ti-truck"> </span>
-          <a href = "#">
-          В момента срока за доставка е 3-4 дни *</a>
+  <div class="layout" id="layout">
+    <section class="segment">
+      <div class="responsive usp-message">
+        <div class="message-item">
+          <div class="message">
+            <span class="ti-gift"></span>
+            Безплатна доставка и безплатно връщане
           </div>
         </div>
-        <div class = "message-item">
-          <div class = "message">
-            <span class = "ti-download"></span>
-            <a href = "#">
-            ИЗТЕГЛЕТЕ ПРИЛОЖЕНИЕТО НИ </a>
+        <div class="message-item">
+          <div class="message">
+            <span class="ti-truck"> </span>
+            <a href="#">
+              В момента срока за доставка е 3-4 дни *</a>
           </div>
         </div>
+        <div class="message-item">
+          <div class="message">
+            <span class="ti-download"></span>
+            <a href="#">
+              ИЗТЕГЛЕТЕ ПРИЛОЖЕНИЕТО НИ </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="main parsys">
+
+      <section class="segment">
+        <div class="container">
+          <a href="#Коледа" title="Меки пижами за коледа - ПАЗАРУВАЙТЕ СЕГА">
+            <img src="./H&M Nightwear.jpg">
+            <div class="text-centered">
+              <div class="motto">ПОДАРЪЦИ ЗА ЛЮБИМИТЕ ВИ ХОРА
+              </div>
+              <div class="header">МЕКИ ПИЖАМИ ЗА КОЛЕДА
+              </div>
+              <div class="shop-now-button">
+                <ul>
+                  <li> ПАЗАРУВАЙТЕ СЕГА </li>
+                </ul>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="segment">
+        <div class="container">
+          <a href="#Жени" title="Блясък в полунощ - ПАЗАРУВАЙТЕ СЕГА">
+            <img src="./H&M Glamorous at Midnight.jpg">
+            <div class="text-centered">
+              <div class="motto">ДА БЪДЕМ ЗАЕДНО
+              </div>
+              <div class="header">БЛЯСЪК В ПОЛУНОЩ
+              </div>
+              <div class="shop-now-button">
+                <ul>
+                  <li> ПАЗАРУВАЙТЕ СЕГА </li>
+                </ul>
+              </div>
+            </div>
+            <div class="text-on-picture top">
+              <span class="campaign campaign-name"> Топ с дантела
+              </span>
+              <span class="campaign campaign-price"> 34,99 лв.
+              </span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="segment">
+        <div class="container">
+          <a href="#Деца" title="Детско празнично облекло - ПАЗАРУВАЙТЕ СЕГА">
+            <img src="./H&M Children Clothes.jpg">
+            <div class="text-centered">
+              <div class="motto">ЗАБАВНИ МОМЕНТИ
+              </div>
+              <div class="header">ДЕТСКО ПРАЗНИЧНО ОБЛЕКЛО
+              </div>
+              <div class="shop-now-button">
+                <ul>
+                  <li> ПАЗАРУВАЙТЕ СЕГА </li>
+                </ul>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="half-segment">
+        <div class="container">
+          <a href="#Жени" title="Стилни вечери - ПАЗАРУВАЙТЕ СЕГА">
+            <img src="./H&M Own The Night.jpg">
+            <div class="text-centered">
+              <div class="motto">ДА БЪДЕМ ЗАЕДНО
+              </div>
+              <div class="header">СТИЛНИ ВЕЧЕРИ
+              </div>
+              <div class="shop-now-button">
+                <ul>
+                  <li> ПАЗАРУВАЙТЕ СЕГА </li>
+                </ul>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="half-segment right">
+        <div class="container">
+          <a href="#Мъже" title="Перфектно парти - ПАЗАРУВАЙТЕ СЕГА">
+            <img src="./H&M Perfect Party.jpg">
+            <div class="text-centered">
+              <div class="motto">ДА БЪДЕМ ЗАЕДНО
+              </div>
+              <div class="header">ПЕРФЕКТНО ПАРТИ
+              </div>
+              <div class="shop-now-button">
+                <ul>
+                  <li> ПАЗАРУВАЙТЕ СЕГА </li>
+                </ul>
+              </div>
+            </div>
+        </div>
+        </a>
+      </section>
+
+      <section class="segment">
+        <div class="container">
+          <a href="#Glassware" title="Декорации от стъкло - ПАЗАРУВАЙТЕ СЕГА">
+            <img src="./H&M Glassware.jpg">
+            <div class="text-centered-top">
+              <div class="motto">АКТУАЛНИ ПРЕДЛОЖЕНИЯ
+              </div>
+              <div class="header">ДЕКОРАЦИИ ОТ СТЪКЛО
+              </div>
+              <div class="shop-now-button">
+                <ul>
+                  <li> ПАЗАРУВАЙТЕ СЕГА </li>
+                </ul>
+              </div>
+            </div>
+            <div class="text-on-picture bottom">
+              <span class="campaign campaign-name"> Ваза от гофрирано стъкло
+              </span>
+              <span class="campaign campaign-price"> 17,99 лв.
+              </span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="segment">
+        <div class="container">
+          <img src="./H&M xME.jpg" title="Изображение на кампания">
+        </div>
+      </section>
+
+      <div class="banner">
+        <div class="banner-header">
+          #HMxME
+        </div>
+        <div class="banner-text">
+          Споделете любимите си модели и почерпете вдъхновение от начина, по който другите ги комбинират.
+        </div>
+        <a href="#HMxME">
+          <div class="view-now-button">
+            VIEW NOW
+          </div>
+        </a>
+      </div>
+
+      <section class=" segment three-panels">
+        <div class="one-third-panel left">
+          <img src="./H&M Panel Background.jpg">
+          <div class="text-centered signUp">
+            <a href="#SignUp">SIGN UP </a>
+          </div>
+        </div>
+        <div class="one-third-panel center">
+          <a href="#Събиране на дрехи" title="СЪБИРАНЕ НА СТАРИ ДРЕХИ - ВИЖТЕ ПОВЕЧЕ">
+            <img src="./H&M Garment Collecting.jpg">
+            <div class="text-centered">
+              <div class="motto">СЪБИРАНЕ НА СТАРИ ДРЕХИ
+              </div>
+              <div class="header">БЪДЕТЕ ОТГОВОРНИ ПОТРЕБИТЕЛИ
+              </div>
+              <div class="shop-now-button">
+                <ul>
+                  <li> ВИЖТЕ ПОВЕЧЕ </li>
+                </ul>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="one-third-panel right">
+          <img src="./H&M Mobile App.jpg">
+          <div class="text-centered-top">
+            <div class="motto">МОДА В ДВИЖЕНИЕ
+            </div>
+            <div class="header">ПРИЛОЖЕНИЕТО НА H&M
+            </div>
+          </div>
+          <a href="#Download iOS">
+            <div class="text-centered download-iOS">
+              DOWNLOAD&nbsp;iOS
+            </div>
+          </a>
+          <a href="#Download Android">
+            <div class="text-centered download-android">
+              DOWNLOAD&nbsp;ANDROID
+            </div>
+          </a>
+        </div>
+
+      </section>
+
+      <section class="segment">
+        <a href="#Gift Guide" title="Наръчник за подаръци - Прочетете повече">
+          <div class="container">
+            <img src="./H&M Gift Guide.jpg">
+            <div class="text-centered left">
+              <div class="motto">MAGAZINE
+              </div>
+              <div class="header">VENELLIMELLI'S GIFT GUIDE
+              </div>
+              <div class="shop-now-button">
+                <ul>
+                  <li> ПРОЧЕТЕТЕ ПОВЕЧЕ </li>
+                </ul>
+              </div>
+            </div>
+        </a>
     </div>
     </section>
 
-  <div class = "main parsys">
-
-    <section class = "segment">
-      <div class = "container">
-        <a href = "#Коледа" title = "Меки пижами за коледа - ПАЗАРУВАЙТЕ СЕГА">
-          <img src = "./H&M Nightwear.jpg">
-          <div class = "text-centered">
-            <div class = "motto">ПОДАРЪЦИ ЗА ЛЮБИМИТЕ ВИ ХОРА
-            </div>
-            <div class = "header">МЕКИ ПИЖАМИ ЗА КОЛЕДА
-            </div>
-              <div class = "shop-now-button">
-                <ul>
-                  <li> ПАЗАРУВАЙТЕ СЕГА </li>
-                </ul>
-              </div>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <section class = "segment">
-      <div class = "container">
-        <a href = "#Жени" title = "Блясък в полунощ - ПАЗАРУВАЙТЕ СЕГА">
-          <img src = "./H&M Glamorous at Midnight.jpg">
-          <div class = "text-centered">
-            <div class = "motto">ДА БЪДЕМ ЗАЕДНО
-            </div>
-            <div class = "header">БЛЯСЪК В ПОЛУНОЩ
-            </div>
-              <div class = "shop-now-button">
-                <ul>
-                  <li> ПАЗАРУВАЙТЕ СЕГА </li>
-                </ul>
-              </div>
-          </div>
-          <div class = "text-on-picture top">
-            <span class = "campaign campaign-name"> Топ с дантела
-            </span>
-          <span class = "campaign campaign-price"> 34,99 лв.
-          </span>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <section class = "segment">
-      <div class = "container">
-        <a href = "#Деца" title = "Детско празнично облекло - ПАЗАРУВАЙТЕ СЕГА">
-          <img src = "./H&M Children Clothes.jpg">
-          <div class = "text-centered">
-            <div class = "motto">ЗАБАВНИ МОМЕНТИ
-            </div>
-            <div class = "header">ДЕТСКО ПРАЗНИЧНО ОБЛЕКЛО
-            </div>
-              <div class = "shop-now-button">
-                <ul>
-                  <li> ПАЗАРУВАЙТЕ СЕГА </li>
-                </ul>
-              </div>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <section class = "half-segment">
-      <div class = "container">
-        <a href = "#Жени" title = "Стилни вечери - ПАЗАРУВАЙТЕ СЕГА">
-          <img src = "./H&M Own The Night.jpg">
-          <div class = "text-centered">
-            <div class = "motto">ДА БЪДЕМ ЗАЕДНО
-            </div>
-            <div class = "header">СТИЛНИ ВЕЧЕРИ
-            </div>
-              <div class = "shop-now-button">
-                <ul>
-                  <li> ПАЗАРУВАЙТЕ СЕГА </li>
-                </ul>
-              </div>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <section class = "half-segment right">
-      <div class = "container">
-        <a href = "#Мъже" title = "Перфектно парти - ПАЗАРУВАЙТЕ СЕГА">
-          <img src = "./H&M Perfect Party.jpg">
-          <div class = "text-centered">
-            <div class = "motto">ДА БЪДЕМ ЗАЕДНО
-            </div>
-            <div class = "header">ПЕРФЕКТНО ПАРТИ
-            </div>
-              <div class = "shop-now-button">
-                <ul>
-                  <li> ПАЗАРУВАЙТЕ СЕГА </li>
-                </ul>
-              </div>
-          </div>
-        </div>
-        </a>
-    </section>
-
-    <section class = "segment">
-      <div class = "container">
-        <a href = "#Glassware" title = "Декорации от стъкло - ПАЗАРУВАЙТЕ СЕГА">
-          <img src = "./H&M Glassware.jpg">
-          <div class = "text-centered-top">
-            <div class = "motto">АКТУАЛНИ ПРЕДЛОЖЕНИЯ
-            </div>
-            <div class = "header">ДЕКОРАЦИИ ОТ СТЪКЛО
-            </div>
-              <div class = "shop-now-button">
-                <ul>
-                  <li> ПАЗАРУВАЙТЕ СЕГА </li>
-                </ul>
-              </div>
-          </div>
-          <div class = "text-on-picture bottom">
-            <span class = "campaign campaign-name"> Ваза от гофрирано стъкло
-            </span>
-          <span class = "campaign campaign-price"> 17,99 лв.
-          </span>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <section class = "segment">
-      <div class = "container">
-          <img src = "./H&M xME.jpg" title = "Изображение на кампания">
-      </div>
-    </section>
-
-     <div class = "banner">
-       <div class = "banner-header">
-       #HMxME
-     </div>
-     <div class = "banner-text">
-       Споделете любимите си модели и почерпете вдъхновение от начина, по който другите ги комбинират.
-     </div>
-     <a href="#HMxME">
-     <div class = "view-now-button">
-       VIEW NOW
-     </div>
-   </a>
-     </div>
-
-     <section class = " segment three-panels">
-       <div class = "one-third-panel left">
-         <img src = "./H&M Panel Background.jpg">
-         <div class ="text-centered signUp">
-           <a href = "#SignUp">SIGN UP </a>
-         </div>
-       </div>
-       <div class = "one-third-panel center">
-         <a href = "#Събиране на дрехи" title = "СЪБИРАНЕ НА СТАРИ ДРЕХИ - ВИЖТЕ ПОВЕЧЕ">
-         <img src = "./H&M Garment Collecting.jpg">
-         <div class = "text-centered">
-           <div class = "motto">СЪБИРАНЕ НА СТАРИ ДРЕХИ
-           </div>
-           <div class = "header">БЪДЕТЕ ОТГОВОРНИ ПОТРЕБИТЕЛИ
-           </div>
-             <div class = "shop-now-button">
-               <ul>
-                 <li> ВИЖТЕ ПОВЕЧЕ </li>
-               </ul>
-             </div>
-         </div>
-       </a>
-       </div>
-       <div class = "one-third-panel right">
-         <img src = "./H&M Mobile App.jpg">
-         <div class = "text-centered-top">
-           <div class = "motto">МОДА В ДВИЖЕНИЕ
-           </div>
-           <div class = "header">ПРИЛОЖЕНИЕТО НА H&M
-           </div>
-         </div>
-         <a href = "#Download iOS">
-         <div class ="text-centered download-iOS">
-           DOWNLOAD&nbsp;iOS
-         </div>
-       </a>
-       <a href = "#Download Android">
-       <div class ="text-centered download-android">
-         DOWNLOAD&nbsp;ANDROID
-       </div>
-     </a>
-       </div>
-
-     </section>
-
-     <section class = "segment">
-       <a href = "#Gift Guide" title = "Наръчник за подаръци - Прочетете повече">
-       <div class = "container">
-           <img src = "./H&M Gift Guide.jpg">
-       <div class = "text-centered left">
-         <div class = "motto">MAGAZINE
-         </div>
-         <div class = "header">VENELLIMELLI'S GIFT GUIDE
-         </div>
-           <div class = "shop-now-button">
-             <ul>
-               <li> ПРОЧЕТЕТЕ ПОВЕЧЕ </li>
-             </ul>
-           </div>
-       </div>
-     </a>
-     </div>
-     </section>
-
   </div> <!-- MAIN PARSYS-->
-</div> <!-- LAYOUT -->
+  </div> <!-- LAYOUT -->
 
-       <div> <!-- HM LIFE PROMO -->
-         <section class = "hm-life-promo">
-           <h2 class = "heading">MAGAZINE</h2>
-           <h4 class = "read-magazine">
-            <a href = "#Life">READ H&M MAGAZINE</a>
-           </h4>
-           <div class ="layout">
-             <div class = "three-promo-panels">
-               <hr>
-               <a href = "#Party Accessories" title = "Party Accessories To Desire - Read The Story">
-               <div class ="promo-panel">
-               <img src="./H&M Party Accessories.jpg">
-                <div class = "promo-text">
-                  <div class = "promo-vignette">EDITOR'S PICKS</div>
-                  <div class = "promo-header">Party accessories to desire</div>
-                  <div class = "read-the-story">READ THE STORY</div>
-                </div>
-               </div>
-               </a>
-               <hr>
-               <a href = "#All That Glitter" title = "All That Glitter - Read The Story">
-               <div class ="promo-panel">
-               <img src="./H&M All That Glitter.jpg">
-               <div class = "promo-text">
-                 <div class = "promo-vignette">EXPERT'S CORNER</div>
-                 <div class = "promo-header">All that glitter</div>
-                 <div class = "read-the-story">READ THE STORY</div>
-               </div>
-               </div>
-               </a>
-               <hr>
-               <a href = "#H&M x Eytys" title = "H&M x Eytys - Read The Story">
-               <div class = "promo-panel">
-               <img src="./H&M x Eytys.jpg">
-               <div class = "promo-text">
-                 <div class = "promo-vignette">INSIDE H&M</div>
-                 <div class = "promo-header">Eytys x H&M - Swedish BFFs</div>
-                 <div class = "read-the-story">READ THE STORY</div>
-               </div>
-               </div>
-               </a>
-             </div>
-           </div>
-         </section>
-
-       </div>
-
-       <!-- FOOTER -->
-       <div class = "footer">
-         <div class = "layout">
-           <div class = "four-footer-panels">
-             <nav class = "footer-panel" id = "footerPanel">
-               <h4 class = "footer-heading">
-                 <div class = "toggle-button" onclick = "expandFooter()">ПАЗАРУВАНЕ
-                 </div>
-               </h4>
-               <ul id = "shoppingFooter" aria-expanded = "false">
-                 <li class = "shopping item"><a href ="#xD">Жени </a></li>
-                 <li class = "shopping item"><a href ="#xD">Мъже </a></li>
-                 <li class = "shopping item"><a href ="#xD">Деца </a></li>
-                 <li class = "shopping item"><a href ="#xD">H&M Home </a></li>
-               </ul>
-             </nav>
-             <nav class = "footer-panel">Placeholder</nav>
-             <nav class = "footer-panel">Placeholder</nav>
-             <nav class = "footer-panel">Placeholder</nav>
-           </div>
+  <div>
+    <!-- HM LIFE PROMO -->
+    <section class="hm-life-promo">
+      <h2 class="heading">MAGAZINE</h2>
+      <h4 class="read-magazine">
+        <a href="#Life">READ H&M MAGAZINE</a>
+      </h4>
+      <div class="layout">
+        <div class="three-promo-panels">
+          <hr>
+          <a href="#Party Accessories" title="Party Accessories To Desire - Read The Story">
+            <div class="promo-panel">
+              <img src="./H&M Party Accessories.jpg">
+              <div class="promo-text">
+                <div class="promo-vignette">EDITOR'S PICKS</div>
+                <div class="promo-header">Party accessories to desire</div>
+                <div class="read-the-story">READ THE STORY</div>
+              </div>
+            </div>
+          </a>
+          <hr>
+          <a href="#All That Glitter" title="All That Glitter - Read The Story">
+            <div class="promo-panel">
+              <img src="./H&M All That Glitter.jpg">
+              <div class="promo-text">
+                <div class="promo-vignette">EXPERT'S CORNER</div>
+                <div class="promo-header">All that glitter</div>
+                <div class="read-the-story">READ THE STORY</div>
+              </div>
+            </div>
+          </a>
+          <hr>
+          <a href="#H&M x Eytys" title="H&M x Eytys - Read The Story">
+            <div class="promo-panel">
+              <img src="./H&M x Eytys.jpg">
+              <div class="promo-text">
+                <div class="promo-vignette">INSIDE H&M</div>
+                <div class="promo-header">Eytys x H&M - Swedish BFFs</div>
+                <div class="read-the-story">READ THE STORY</div>
+              </div>
+            </div>
+          </a>
         </div>
-       </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="layout">
+      <div class="four-footer-panels">
+        <nav class="footer-panel" id="footerPanel">
+          <h4 class="footer-heading">
+            <div class="toggle-button" onclick="expandFooter()">ПАЗАРУВАНЕ
+            </div>
+          </h4>
+          <ul id="shoppingFooter" aria-expanded="false">
+            <li class="shopping item"><a href="#xD">Жени </a></li>
+            <li class="shopping item"><a href="#xD">Мъже </a></li>
+            <li class="shopping item"><a href="#xD">Деца </a></li>
+            <li class="shopping item"><a href="#xD">H&M Home </a></li>
+          </ul>
+        </nav>
+        <nav class="footer-panel" id="footerPanel">Placeholder</nav>
+        <nav class="footer-panel" id="footerPanel">Placeholder</nav>
+        <nav class="footer-panel" id="footerPanel">Placeholder</nav>
+      </div>
+    </div>
+  </div>
 
 
 
-    <!-- Embedded JavaScript-->
-    <script type = "text/javascript">
+  <!-- Embedded JavaScript-->
+  <script type="text/javascript">
 
-    </script>
+  </script>
 
-    </body>
+</body>
+
 </html>
-
-
-
-
-<!--
-<div class = "row">
-  <div class = "col-4">
-    <img src = "https://images.rolex.com/catalogue/images/upright-bba-with-shadow/m118135-0003.png?impolicy=upright-majesty">
-  </div>
-  <div class = "col-4">
-    <img src = "https://banner2.kisspng.com/20180404/yxq/kisspng-rolex-datejust-watch-diamond-rolex-day-date-rolex-5ac48c5b2c3755.0310947015228304271811.jpg">
-  </div>
-  <div class = "col-4">
-    <img src = "https://banner2.kisspng.com/20180415/cjq/kisspng-rolex-datejust-watch-rolex-submariner-diamond-rolex-5ad2eabb00fcf1.7306179115237720910041.jpg">
-  </div>
-</div>
-
-<div class = "row">
-  <div class = "col-2">
-    <img src = "https://banner2.kisspng.com/20180404/yxq/kisspng-rolex-datejust-watch-diamond-rolex-day-date-rolex-5ac48c5b2c3755.0310947015228304271811.jpg">
-  </div>
-  <div class = "col-7">
-    <img src = "https://banner2.kisspng.com/20180404/yxq/kisspng-rolex-datejust-watch-diamond-rolex-day-date-rolex-5ac48c5b2c3755.0310947015228304271811.jpg">
-  </div>
-  <div class = "col-3">
-    <img src = "https://banner2.kisspng.com/20180404/yxq/kisspng-rolex-datejust-watch-diamond-rolex-day-date-rolex-5ac48c5b2c3755.0310947015228304271811.jpg">
-  </div>
-</div>
- -->

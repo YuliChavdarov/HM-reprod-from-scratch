@@ -119,5 +119,6 @@ function highContrast(){
       shoppingItems[i].className = "shopping item";
       }
       document.getElementById("shoppingFooter").setAttribute("aria-expanded", "false");
+      document.getElementById("footerPanel").className = "footer-panel";
    }
   }

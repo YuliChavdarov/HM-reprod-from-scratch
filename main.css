@@ -417,6 +417,8 @@ nav.primary-menu ul li{
   width:100%;
   display: block;
   text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .footer-panel{
   width: 23%;
@@ -426,15 +428,24 @@ nav.primary-menu ul li{
 .footer-heading{
   font-size: 12px;
   text-align: left;
+  margin: 0;
 }
 .footer-panel ul{
   list-style: none;
   text-align: left;
   padding-left: 0px;
+  margin: 0;
 }
 .footer-panel .item a{
   color: #c8c8c8;
   font-size: 12px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 .footer-panel .item a:hover{
   color: #fff;
@@ -444,6 +455,13 @@ nav.primary-menu ul li{
   color: #fff;
   cursor: pointer;
   display: inline-block;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
 /*###### JAVASCRIPT Гъзарии #####*/
@@ -692,11 +710,9 @@ li.sign-in-tab a{
   color: black;
 }
 .footer-panel.responsive{
-  width: 100%;
-  display: block;
+  display: inline-block;
 }
 .footer-panel.responsive .toggle-button{
-  background-color: blue;
   color: white;
 }
 
